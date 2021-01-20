@@ -16,8 +16,8 @@
     "typeRoots": ["./node_modules/@types", "./custom_typings"],
     // Set the base location for the paths to look for
     "baseUrl": ".",
-    "paths": {
-      "~i18n": ["./i18n.ts"]
+    "paths": { 
+      "@/*": ["*"] // universal alias for all root level folders
     }
   },
   "include": ["next-env.d.ts", "styled-components.d.ts", "**/*.ts", "**/*.tsx"],
