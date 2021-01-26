@@ -1,12 +1,12 @@
 import * as React from "react"
 import { SimpleImg } from "react-simple-img"
 import { AnimateGroup, Animate } from "react-simple-animate"
-import formik from "../images/formik.min.png"
-import hookFrom from "../images/hookform.min.png"
-import reduxForm from "../images/reduxform.min.png"
-import reactHookFormVideo from "../images/react-hook-form-test.min.mp4"
-import formikVideo from "../images/formik-test.min.mp4"
-import reduxFormVideo from "../images/redux-form-test.min.mp4"
+// import formik from "@/public/images/formik.min.png"
+// import hookFrom from "@/public/images/hookform.min.png"
+// import reduxForm from "@/public/images/reduxform.min.png"
+// import reactHookFormVideo from "@/public/images/react-hook-form-test.min.mp4"
+// import formikVideo from "@/public/images/formik-test.min.mp4"
+// import reduxFormVideo from "@/public/images/redux-form-test.min.mp4"
 import home from "../data/home"
 import containerStyles from "../styles/container.module.css"
 import typographyStyles from "../styles/typography.module.css"
@@ -110,12 +110,12 @@ function CodePerfCompareSection({
             <b className={typographyStyles.note}>1800ms</b>
           </li>
         </ul>
-        <SimpleImg
+        {/* <SimpleImg
           src={hookFrom}
           placeholder={false}
           height={163}
           alt="React Hook Form performance"
-        />
+        /> */}
       </div>
 
       <h2 className={typographyStyles.title}>Formik</h2>
@@ -128,12 +128,12 @@ function CodePerfCompareSection({
             <b className={typographyStyles.note}>2070ms</b>
           </li>
         </ul>
-        <SimpleImg
+        {/* <SimpleImg
           height={230}
           src={formik}
           placeholder={false}
           alt="Formik performance"
-        />
+        /> */}
       </div>
 
       <h2 className={typographyStyles.title}>Redux Form</h2>
@@ -146,12 +146,12 @@ function CodePerfCompareSection({
             <b className={typographyStyles.note}>2380ms</b>
           </li>
         </ul>
-        <SimpleImg
+        {/* <SimpleImg
           height={365}
           src={reduxForm}
           placeholder={false}
           alt="Redux Form performance"
-        />
+        /> */}
       </div>
 
       <p style={{ marginBottom: 40, textAlign: "center" }}>

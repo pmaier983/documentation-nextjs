@@ -10,7 +10,7 @@ import code from "./codeExamples/devTool"
 import copyClipBoard from "./utils/copyClipBoard"
 import generic from "../data/generic"
 import { useStateMachine } from "little-state-machine"
-import devTool from "../images/dev-tool.png"
+// import devTool from "@/public/images/dev-tool.png"
 import typographyStyles from "../styles/typography.module.css"
 import containerStyles from "../styles/container.module.css"
 import buttonStyles from "../styles/button.module.css"
@@ -58,11 +58,11 @@ export default ({ defaultLang, content }: Props) => {
           delay={0.2}
           render={({ style }) => (
             <div className={containerStyles.subContainer} style={style}>
-              <img
+              {/* <img
                 src={devTool}
                 className={styles.devToolImg}
                 alt="React Hook Form DevTools"
-              />
+              /> */}
             </div>
           )}
         />
