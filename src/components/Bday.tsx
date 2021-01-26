@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Animate, AnimateGroup } from "react-simple-animate"
 import styles from "./Bday.module.css"
-import Link from "next/link"
+import Link from "@/utils/Link"
 
 const list = [
   <p key="1">
@@ -65,7 +65,7 @@ export default ({ isCardPlay }: { isCardPlay: boolean }) => {
                     render={({ style }) => (
                       <div>
                         <p>Thanks to the team members:</p>
-                        <Link className={styles.members} to="/about-us">
+                        <Link className={styles.members} href="/about-us">
                           <div style={style} className={styles.avatars}>
                             <img
                               src="https://avatars2.githubusercontent.com/u/12913947?s=120&v=4"
@@ -138,7 +138,7 @@ export default ({ isCardPlay }: { isCardPlay: boolean }) => {
                       ))}
                     </ul>
 
-                    <Link to="/api" className={styles.link}>
+                    <Link href="/api" className={styles.link}>
                       Check out API
                     </Link>
                   </div>

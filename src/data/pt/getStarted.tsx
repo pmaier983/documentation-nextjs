@@ -51,9 +51,9 @@ export default {
           <b className={typographyStyles.note}>Nota: </b>React Native vai
           precisar do uso manual do comando de registro:{" "}
           <code>{`register({ name: 'test' }, { required: true })`}</code> or
-          usando <Link to="/api#Controller">Controller</Link> para englobar e
+          usando <Link href="/api#Controller">Controller</Link> para englobar e
           registrar automaticamente seu componente. Você também pode ler mais na
-          Seção <Link to="/api/#ReactNative">React Native</Link>.
+          Seção <Link href="/api/#ReactNative">React Native</Link>.
         </p>
       </>
     ),
@@ -102,10 +102,7 @@ export default {
         </ul>
         <p>
           Você pode ler mais detalhes em cada uma das regras em{" "}
-          <Link to={translateLink("api#register", currentLanguage)}>
-            seção de registro
-          </Link>
-          .
+          <Link href="/api#register">seção de registro</Link>.
         </p>
       </>
     ),
@@ -151,8 +148,8 @@ export default {
           Material-UI
         </a>
         , consequentemente precisamos construir um componente por volta:{" "}
-        <Link to="/api#Controller">Controller</Link> para agilizar o processo de
-        integração e ainda oferecer a você liberdade de usar o registro
+        <Link href="/api#Controller">Controller</Link> para agilizar o processo
+        de integração e ainda oferecer a você liberdade de usar o registro
         personalizado com suas necessidades.
       </p>
     ),
@@ -170,9 +167,7 @@ export default {
           checar se o componente que deseja expõe um <code>innerRef</code> ou{" "}
           <code>ref</code> isso pode ser utilizado para{" "}
           <code>
-            <Link to={translateLink("api#register", currentLanguage)}>
-              registrar
-            </Link>
+            <Link href="/api#register">registrar</Link>
           </code>
           . Por exemplo: Material-UI's <code>TextField</code> aceita{" "}
           <code>inputRef</code> como props. Passando simplesmente o{" "}
@@ -192,7 +187,7 @@ export default {
         </p>
         <p>
           A forma mais fácil de usar é{" "}
-          <Link to="/api#Controller">Controller</Link> utilizar um componente
+          <Link href="/api#Controller">Controller</Link> utilizar um componente
           por volta, que irá tomar conta de registrar customizadamente o
           processo para você.
         </p>
@@ -215,9 +210,7 @@ export default {
           </a>{" "}
           Hook e atualizar o valor via{" "}
           <code>
-            <Link to={translateLink("api#setValue", currentLanguage)}>
-              setValue
-            </Link>
+            <Link href="api#setValue">setValue</Link>
           </code>
           .
         </p>

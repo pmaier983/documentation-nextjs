@@ -1,5 +1,5 @@
 import * as React from "react"
-import Link from "next/link"
+import Link from "@/utils/Link"
 import colors from "../../../styles/colors"
 import Popup from "../../../components/Popup"
 import CodeArea from "../../../components/CodeArea"
@@ -16,7 +16,7 @@ export default {
     <p>
       <span style={{ fontSize: 12 }}>►</span> React Hook Form V6 is released. If
       you are planning to upgrade, please read through the{" "}
-      <Link to="/migrate-v5-to-v6">Migration Guide to V6</Link>.
+      <Link href="/migrate-v5-to-v6">Migration Guide to V6</Link>.
     </p>
   ),
   useForm: {

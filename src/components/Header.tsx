@@ -173,7 +173,7 @@ export default function Header({
                   muted
                   style={style}
                 >
-                  <source src={video} type="video/mp4" />
+                  {/* <source src={video} type="video/mp4" /> */}
                 </video>
               )}
             />
@@ -192,7 +192,7 @@ export default function Header({
             playsInline
             muted
           >
-            <source src={nativeVideo} type="video/mp4" />
+            {/* <source src={nativeVideo} type="video/mp4" /> */}
           </video>
         </div>
 

@@ -1,6 +1,6 @@
 import * as React from "react"
 import code from "../../components/codeExamples/defaultExample"
-import Link from "next/link"
+import Link from "@/utils/Link"
 import translateLink from "../../components/logic/translateLink"
 import CodeArea from "../../components/CodeArea"
 import {
@@ -60,9 +60,9 @@ export default {
           (manual <code>register</code>) する必要があります。 (例：{" "}
           <code>{`register({ name: 'test' }, { required: true })`}</code>
           または、
-          <Link to="/api#Controller">Controller</Link>
+          <Link href="/api#Controller">Controller</Link>
           を使用してコンポーネントをラップします。
-          <Link to="/api/#ReactNative">React Native</Link>
+          <Link href="/api/#ReactNative">React Native</Link>
           セクションで詳細を読むこともできます。
         </p>
       </>
@@ -110,9 +110,7 @@ export default {
           </li>
         </ul>
         <p>
-          <Link to={translateLink("api#register", currentLanguage)}>
-            register セクション
-          </Link>
+          <Link href="/api#register">register セクション</Link>
           で各ルールの詳細を読むことができます。
         </p>
       </>
@@ -159,7 +157,7 @@ export default {
         などの外部の制御された UI{" "}
         コンポーネントライブラリと組み合わせての使用を避けることは難しいため、
         ラッパーコンポーネントを作成しました。{" "}
-        <Link to="/api#Controller">Controller</Link>{" "}
+        <Link href="/api#Controller">Controller</Link>{" "}
         は、必要に応じてカスタム登録を自由に使用できると同時に、統合プロセスを簡素化します。
       </p>
     ),
@@ -176,9 +174,7 @@ export default {
           <b className={typographyStyles.note}>オプション1：</b>{" "}
           最適な方法は、使用したい外部コンポーネントが{" "}
           <code>
-            <Link to={translateLink("api#register", currentLanguage)}>
-              register
-            </Link>
+            <Link href="/api#register">register</Link>
           </code>{" "}
           に使用できる <code>innerRef</code> または <code>ref</code>{" "}
           を公開しているかどうかを確認することです。 例えば、Material-UI の{" "}
@@ -201,7 +197,7 @@ export default {
         </p>
         <p>
           次に簡単な方法は、ラッパーコンポーネントである{" "}
-          <Link to="/api#Controller">Controller</Link> を使用することです。
+          <Link href="/api#Controller">Controller</Link> を使用することです。
           このコンポーネントはカスタム登録処理を行います。
         </p>
 
@@ -222,9 +218,7 @@ export default {
           </a>{" "}
           フックを使用してカスタム登録を設定し、{" "}
           <code>
-            <Link to={translateLink("api#setValue", currentLanguage)}>
-              setValue
-            </Link>
+            <Link href="api#setValue">setValue</Link>
           </code>{" "}
           を介して値を更新できます。
         </p>

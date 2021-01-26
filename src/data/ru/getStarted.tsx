@@ -1,6 +1,6 @@
 import * as React from "react"
 import code from "../../components/codeExamples/defaultExample"
-import Link from "next/link"
+import Link from "@/utils/Link"
 import translateLink from "../../components/logic/translateLink"
 import CodeArea from "../../components/CodeArea"
 import {
@@ -53,10 +53,10 @@ export default {
           <b className={typographyStyles.note}>Примечание: </b>В React Native
           нужно будет вручную ввести команду для регистрации:{" "}
           <code>{`register({ name: 'test' }, { required: true })`}</code> или
-          использовать <Link to="/api#Controller">Controller</Link> для
+          использовать <Link href="/api#Controller">Controller</Link> для
           оборачивания и автоматической регистрации вашего компонента. Вы можете
           узнать больше в разделе{" "}
-          <Link to="/api/#ReactNative">React Native</Link>.
+          <Link href="/api/#ReactNative">React Native</Link>.
         </p>
       </>
     ),
@@ -105,10 +105,7 @@ export default {
         </ul>
         <p>
           Вы можете детально ознакомиться с каждым атрибутом в{" "}
-          <Link to={translateLink("api#register", currentLanguage)}>
-            разделе о регистрации
-          </Link>
-          .
+          <Link href="/api#register">разделе о регистрации</Link>.
         </p>
       </>
     ),
@@ -155,7 +152,7 @@ export default {
             Material-UI
           </a>
           , поэтому мы должны создать компонент-обёртку:{" "}
-          <Link to="/api#Controller">Controller</Link> для упрощения процесса
+          <Link href="/api#Controller">Controller</Link> для упрощения процесса
           интеграции, предоставляя при этом свободу использования
           пользовательского ввода в соответствии с вашими потребностями.
         </p>
@@ -191,9 +188,7 @@ export default {
           это проверить, содержит ли нужный вам компонент, <code>innerRef</code>{" "}
           или <code>ref</code>, которые можно использовать для передачи свойства{" "}
           <code>
-            <Link to={translateLink("api#register", currentLanguage)}>
-              register
-            </Link>
+            <Link href="/api#register">register</Link>
           </code>
           . Наример: <code>TextField</code> из Material-UI принимает{" "}
           <code>inputRef</code> как одно из подобных свойств. Просто передайте{" "}
@@ -213,7 +208,7 @@ export default {
         </p>
         <p>
           В этом случае, самый простой способ - это использование
-          компонента-обёртки <Link to="/api#Controller">Controller</Link>,
+          компонента-обёртки <Link href="/api#Controller">Controller</Link>,
           который сам позаботится о регистрации.
         </p>
 
@@ -236,9 +231,7 @@ export default {
           </a>{" "}
           Hook(а) и обновить значение с использованием метода{" "}
           <code>
-            <Link to={translateLink("api#setValue", currentLanguage)}>
-              setValue
-            </Link>
+            <Link href="api#setValue">setValue</Link>
           </code>
           .
         </p>

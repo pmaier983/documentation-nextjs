@@ -52,8 +52,8 @@ export default {
           <b className={typographyStyles.note}>Note: </b>React Native will
           require you to either use a manual register command:{" "}
           <code>{`register({ name: 'test' }, { required: true })`}</code> or a{" "}
-          <Link to="/api#Controller">Controller</Link> to wrap and register your
-          component.
+          <Link href="/api#Controller">Controller</Link> to wrap and register
+          your component.
         </p>
       </>
     ),
@@ -102,10 +102,7 @@ export default {
         </ul>
         <p>
           You can read more detail on each rule in the{" "}
-          <Link to={translateLink("api#register", currentLanguage)}>
-            register section
-          </Link>
-          .
+          <Link href="/api#register">register section</Link>.
         </p>
       </>
     ),
@@ -151,7 +148,7 @@ export default {
             Material-UI
           </a>
           . To make this simple, we provide a wrapper component:{" "}
-          <Link to="/api#Controller">Controller</Link> to streamline the
+          <Link href="/api#Controller">Controller</Link> to streamline the
           integration process while still giving you the freedom to use a custom
           register.
         </p>
@@ -174,8 +171,8 @@ export default {
         </p>
         <p>
           In this case, you should use the{" "}
-          <Link to="/api#Controller">Controller</Link> wrapper component, which
-          will take care of the registration process for you.
+          <Link href="/api#Controller">Controller</Link> wrapper component,
+          which will take care of the registration process for you.
         </p>
         <CodeArea
           rawData={uiLibraryHookInput}
@@ -189,9 +186,7 @@ export default {
           component you wish to use exposes a <code>ref</code> that can be used
           to{" "}
           <code>
-            <Link to={translateLink("api#register", currentLanguage)}>
-              register
-            </Link>
+            <Link href="/api#register">register</Link>
           </code>
           . For example: Material-UI and Reactstrap's <code>TextField</code>{" "}
           accepts <code>inputRef</code> as one of its props. You can simply pass{" "}
@@ -212,9 +207,7 @@ export default {
           </a>{" "}
           Hook and update the value via{" "}
           <code>
-            <Link to={translateLink("api#setValue", currentLanguage)}>
-              setValue
-            </Link>
+            <Link href="api#setValue">setValue</Link>
           </code>
           .
         </p>

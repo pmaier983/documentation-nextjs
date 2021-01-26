@@ -10,11 +10,11 @@ import Builder from "./BuilderPage"
 import FeaturesList from "./FeaturesList"
 import { useStateMachine } from "little-state-machine"
 import home from "../data/home"
-import translateLink from "./logic/translateLink"
 import typographyStyles from "../styles/typography.module.css"
 import containerStyles from "../styles/container.module.css"
 import buttonStyles from "../styles/button.module.css"
 import styles from "./HomePage.module.css"
+import useTranslation from "next-translate/useTranslation"
 
 const { useState, useRef, useEffect } = React
 
@@ -33,6 +33,8 @@ function HomePage({
   }
   defaultLang: string
 }) {
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const [submitData, updateSubmitData] = useState({})
   const [showBuilder, toggleBuilder] = useState(false)
   const HomeRef = useRef(null)
@@ -43,15 +45,8 @@ function HomePage({
   const [isPlayRender, setRenderPlay] = useState(false)
   const [formUpdated, setFormUpdated] = useState(false)
   const [isPlayWatch, setWatchPlay] = useState(false)
-  const {
-    state,
-    state: { language },
-  } = useStateMachine()
+  const { state } = useStateMachine()
   const lightMode = state?.setting?.lightMode
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
 
   const onSubmit = (data) => {
     updateSubmitData(data)

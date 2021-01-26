@@ -49,7 +49,7 @@ export default {
           将需要使用手动注册 (例子如下:{" "}
           <code>{`register({ name: 'test' }, { required: true })`}</code>
           或使用
-          <Link to="/api#Controller">Controller</Link>
+          <Link href="/api#Controller">Controller</Link>
           来包装并注册你的组件。
         </p>
       </>
@@ -97,9 +97,7 @@ export default {
         </ul>
         <p>
           你可以在
-          <Link to={translateLink("api#register", currentLanguage)}>
-            注册表单项(register)
-          </Link>
+          <Link href="/api#register">注册表单项(register)</Link>
           阅读每个规则的更多细节。
         </p>
       </>
@@ -145,15 +143,11 @@ export default {
             Material-UI
           </a>
           ，因此我们提供了一个包装组件:{" "}
-          <Link to="/api#Controller">Controller</Link>{" "}
+          <Link href="/api#Controller">Controller</Link>{" "}
           来简化集成过程，同时仍然可以自由地使用自定义register满足你的需求。
         </p>
         <p>
-          了解更多{" "}
-          <Link to={translateLink("api#Controller", currentLanguage)}>
-            Controller
-          </Link>{" "}
-          组件的内容.
+          了解更多 <Link href="api#Controller">Controller</Link> 组件的内容.
         </p>
       </>
     ),
@@ -170,9 +164,7 @@ export default {
           <b className={typographyStyles.note}>使用方法 1:</b>{" "}
           最好的方式是检查你想要使用的组件是否暴露了 <code>ref</code> 可以用于{" "}
           <code>
-            <Link to={translateLink("api#register", currentLanguage)}>
-              register
-            </Link>
+            <Link href="/api#register">register</Link>
           </code>
           。例如: Material-UI 的 <code>TextField</code> 的 props 就包含了{" "}
           <code>inputRef</code> 。 你可以直接将 <code>register</code> 传递给它。
@@ -186,10 +178,7 @@ export default {
           <code>react-datepicker</code>。
         </p>
         <p>
-          第二种方法是使用{" "}
-          <Link to={translateLink("/api#Controller", currentLanguage)}>
-            Controller
-          </Link>{" "}
+          第二种方法是使用 <Link href="/api#Controller">Controller</Link>{" "}
           包裹组件，他会帮你处理注册过程。
         </p>
         <CodeArea
@@ -209,9 +198,7 @@ export default {
           </a>{" "}
           Hook 自定义注册并更新表单项的值。{" "}
           <code>
-            <Link to={translateLink("api#setValue", currentLanguage)}>
-              setValue
-            </Link>
+            <Link href="api#setValue">setValue</Link>
           </code>
         </p>
       </>
@@ -279,11 +266,9 @@ export default {
           </a>
           进行基于数据格式的表单校验，你可以将<code>schema</code>
           用作可选配置传给
-          <Link to={translateLink("/api#useForm", currentLanguage)}>
-            useForm
-          </Link>
-          。 React Hook Form将根据数据格式校验你的输入数据，并返回
-          <Link to={translateLink("/api#errors", currentLanguage)}>错误</Link>
+          <Link href="/api#useForm">useForm</Link>。 React Hook
+          Form将根据数据格式校验你的输入数据，并返回
+          <Link href="/api#errors">错误</Link>
           或有效结果。
         </p>
       </>

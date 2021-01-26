@@ -18,7 +18,7 @@ export default {
     <p>
       <span style={{ fontSize: 12 }}>►</span> Se libera React Hook Form V6. Si
       planea actualizar, lea la{" "}
-      <NavLink to="/migrate-v5-to-v6">Guía de migración a V6</NavLink>.
+      <NavLink href="/migrate-v5-to-v6">Guía de migración a V6</NavLink>.
     </p>
   ),
   useForm: {

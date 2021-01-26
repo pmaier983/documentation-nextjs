@@ -42,7 +42,7 @@ function CodePerfCompareSection({
           render={({ style }) => (
             <section style={style}>
               <video controls autoPlay playsInline muted loop>
-                <source src={formikVideo} type="video/mp4" />
+                {/* <source src={formikVideo} type="video/mp4" /> */}
               </video>
               <p>
                 {home.rendering[currentLanguage].totalReRender}{" "}
@@ -58,7 +58,7 @@ function CodePerfCompareSection({
           render={({ style }) => (
             <section style={style}>
               <video controls autoPlay playsInline muted loop>
-                <source src={reactHookFormVideo} type="video/mp4" />
+                {/* <source src={reactHookFormVideo} type="video/mp4" /> */}
               </video>
               <p>
                 {home.rendering[currentLanguage].totalReRender}{" "}
@@ -74,7 +74,7 @@ function CodePerfCompareSection({
           render={({ style }) => (
             <section style={style}>
               <video controls autoPlay playsInline muted loop>
-                <source src={reduxFormVideo} type="video/mp4" />
+                {/* <source src={reduxFormVideo} type="video/mp4" /> */}
               </video>
               <p>
                 {home.rendering[currentLanguage].totalReRender}{" "}

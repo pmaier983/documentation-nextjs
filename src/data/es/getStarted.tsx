@@ -51,9 +51,9 @@ export default {
           <b className={typographyStyles.note}>Nota: </b>En React Native es
           necesario utilizar un comando de registro manual:{" "}
           <code>{`register({ name: 'test' }, { required: true })`}</code> o
-          utilizar <Link to="/api#Controller">Controller</Link> para wrappear y
-          auto registrar tu componente. Puedes leer mas en la sección de{" "}
-          <Link to="/api/#ReactNative">React Native</Link>.
+          utilizar <Link href="/api#Controller">Controller</Link> para wrappear
+          y auto registrar tu componente. Puedes leer mas en la sección de{" "}
+          <Link href="/api/#ReactNative">React Native</Link>.
         </p>
       </>
     ),
@@ -101,10 +101,7 @@ export default {
         </ul>
         <p>
           Puedes leer más acerca de cada una en la sección{" "}
-          <Link to={translateLink("api#register", currentLanguage)}>
-            register
-          </Link>
-          .
+          <Link href="/api#register">register</Link>.
         </p>
       </>
     ),
@@ -150,7 +147,7 @@ export default {
           Material-UI
         </a>
         , por lo que hemos construído un componente que los envuelve:{" "}
-        <Link to="/api#Controller">Controller</Link> para guiar el proceso de
+        <Link href="/api#Controller">Controller</Link> para guiar el proceso de
         integración mientras mantenemos la libertad de usar un registro
         personalizado según tus necesidades.
       </p>
@@ -170,9 +167,7 @@ export default {
           interna <code>innerRef</code>o una referencia <code>ref</code> pueda
           ser utilizada para registración el componente con{" "}
           <code>
-            <Link to={translateLink("api#register", currentLanguage)}>
-              register
-            </Link>
+            <Link href="/api#register">register</Link>
           </code>
           . Por ejemplo: El <code>TextField</code> de Material-UI acepta{" "}
           <code>inputRef</code> en sus propiedades. Simplemente debes pasar el
@@ -193,7 +188,7 @@ export default {
         </p>
         <p>
           La siguiente forma más fácil es utilizar el componente{" "}
-          <Link to="/api#Controller">Controller</Link>, cuando utilizas este
+          <Link href="/api#Controller">Controller</Link>, cuando utilizas este
           componente, él se encarga de realizar el proceso de registro por ti.
         </p>
         <CodeArea
@@ -214,9 +209,7 @@ export default {
           </a>{" "}
           y actualizar el valor a través de{" "}
           <code>
-            <Link to={translateLink("api#setValue", currentLanguage)}>
-              setValue
-            </Link>
+            <Link href="api#setValue">setValue</Link>
           </code>
           .
         </p>

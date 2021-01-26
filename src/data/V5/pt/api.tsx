@@ -1,5 +1,5 @@
 import * as React from "react"
-import Link from "next/link"
+import Link from "@/utils/Link"
 import colors from "../../../styles/colors"
 import Popup from "../../../components/Popup"
 import generic from "../../generic"
@@ -19,7 +19,7 @@ export default {
     <p>
       <span style={{ fontSize: 12 }}>►</span> O formulário de gancho de reação
       V6 é liberado. Se você está planejando atualizar, leia o{" "}
-      <Link to="/migrate-v5-to-v6">Guia de migração para V6</Link>.
+      <Link href="/migrate-v5-to-v6">Guia de migração para V6</Link>.
     </p>
   ),
   useForm: {

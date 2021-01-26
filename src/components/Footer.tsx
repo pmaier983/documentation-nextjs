@@ -1,8 +1,7 @@
 import * as React from "react"
-import Link from "next/link"
+import Link from "@/utils/Link"
 import nav from "../data/nav"
 import generic from "../data/generic"
-import translateLink from "./logic/translateLink"
 import { useStateMachine } from "little-state-machine"
 import styles from "./Footer.module.css"
 
@@ -16,48 +15,34 @@ export default ({ currentLanguage }: { currentLanguage: string }) => {
     >
       <ul className={styles.links}>
         <li>
-          <Link to={translateLink("/", currentLanguage)}>
-            {nav[currentLanguage].home}
-          </Link>
+          <Link href="/">{nav[currentLanguage].home}</Link>
         </li>
         <li>
-          <Link to={translateLink("/get-started", currentLanguage)}>
-            {nav[currentLanguage].getStarted}
-          </Link>
+          <Link href="/get-started">{nav[currentLanguage].getStarted}</Link>
         </li>
         <li>
-          <Link to={translateLink("/api", currentLanguage)}>API</Link>
+          <Link href="/api">API</Link>
         </li>
         <li>
-          <Link to={translateLink("/ts", currentLanguage)}>TS</Link>
+          <Link href="/ts">TS</Link>
         </li>
         <li>
-          <Link to={translateLink("/advanced-usage", currentLanguage)}>
-            {nav[currentLanguage].advanced}
-          </Link>
+          <Link href="/advanced-usage">{nav[currentLanguage].advanced}</Link>
         </li>
         <li>
-          <Link to={translateLink("/faqs", currentLanguage)}>
-            {nav[currentLanguage].faqs}
-          </Link>
+          <Link href="/faqs">{nav[currentLanguage].faqs}</Link>
         </li>
         <li>
-          <Link to={translateLink("/form-builder", currentLanguage)}>
-            {nav[currentLanguage].builder}
-          </Link>
+          <Link href="/form-builder">{nav[currentLanguage].builder}</Link>
         </li>
         <li>
-          <Link to={translateLink("/dev-tools", currentLanguage)}>
-            DevTools
-          </Link>
+          <Link href="/dev-tools">DevTools</Link>
         </li>
         <li>
-          <Link to={translateLink("/resources", currentLanguage)}>
-            {nav[currentLanguage].resources}
-          </Link>
+          <Link href="/resources">{nav[currentLanguage].resources}</Link>
         </li>
         <li>
-          <Link to="/about-us">About us</Link>
+          <Link href="/about-us">About us</Link>
         </li>
       </ul>
       <p>
