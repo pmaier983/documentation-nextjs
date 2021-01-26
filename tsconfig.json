@@ -16,7 +16,7 @@
     "typeRoots": ["./node_modules/@types", "./custom_typings"],
     // Set the base location for the paths to look for
     "baseUrl": ".",
-    "paths": { 
+    "paths": {
       "@/*": ["*"] // universal alias for all root level folders
     }
   },

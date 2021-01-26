@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@hookform/devtools": "2.0.0-beta.1",
+    "@reach/router": "^1.3.4",
     "little-state-machine": "3.0.1",
     "next": "^10.0.5",
     "next-translate": "^1.0.1",
