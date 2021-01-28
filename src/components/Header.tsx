@@ -33,7 +33,8 @@ export default function Header({
 }: {
   homeRef: React.RefObject<HTMLDivElement>
 }) {
-  const { lang: currentLanguage } = useTranslation()
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const [isWeb, setIsWeb] = React.useState(true)
 
   return (

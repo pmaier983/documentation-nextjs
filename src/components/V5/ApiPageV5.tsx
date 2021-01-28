@@ -47,6 +47,7 @@ import tableStyles from "../../styles/table.module.css"
 import buttonStyles from "../../styles/button.module.css"
 import containerStyles from "../../styles/container.module.css"
 import styles from "../ApiPage.module.css"
+import useTranslation from "next-translate/useTranslation"
 
 const { useRef, useEffect } = React
 
@@ -87,15 +88,9 @@ interface Props {
 }
 
 function ApiPage({ formData, defaultLang, api }: Props) {
-  const {
-    state,
-    state: { language },
-  } = useStateMachine()
   const isUnmount = useRef(false)
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const [activeIndex, setActiveIndex] = React.useState(0)
   const links = [
     api.useForm,

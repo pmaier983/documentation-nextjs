@@ -27,9 +27,9 @@ const options = {
 
 function HomePage({}) {
   const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const { query } = useRouter()
   // const firstQuery: string = _.isArray(query) ? _.head(query) : query
-  const currentLanguage = lang || "en"
   const [submitData, updateSubmitData] = useState({})
   const [showBuilder, toggleBuilder] = useState(false)
   const HomeRef = useRef(null)

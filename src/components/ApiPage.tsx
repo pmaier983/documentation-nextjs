@@ -60,6 +60,7 @@ import setValueUseFieldArray from "./codeExamples/setValueUseFieldArray"
 import submitReset from "./codeExamples/submitReset"
 import handleSubmitAsyncCode from "./codeExamples/handleSubmitAsyncCode"
 import fieldArrayReset from "./codeExamples/fieldArrayReset"
+import useTranslation from "next-translate/useTranslation"
 
 const { useRef, useEffect } = React
 
@@ -99,14 +100,9 @@ interface Props {
 }
 
 function ApiPage({ formData, defaultLang, api }: Props) {
-  const {
-    state: { language },
-  } = useStateMachine()
   const isUnmount = useRef(false)
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const [activeIndex, setActiveIndex] = React.useState(0)
   const [play, setPlay] = React.useState(false)
   const links = [

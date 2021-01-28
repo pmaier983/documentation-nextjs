@@ -66,10 +66,8 @@ const Faq = ({ location, defaultLang, getStarted }: Props) => {
   const {
     state: { language },
   } = useStateMachine()
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
 
   const links = [
     getStarted.install,

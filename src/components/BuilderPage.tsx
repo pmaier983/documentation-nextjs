@@ -58,9 +58,10 @@ function BuilderPage({
   HomeRef?: any
   isStatic?: boolean
 }) {
-  const { lang: currentLanguage } = useTranslation()
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const {
-    state: { formData = [], language },
+    state: { formData = [] },
     action: updateFormData,
   } = useStateMachine(updateStore)
   const [editFormData, setFormData] = useState(defaultValue)

@@ -5,15 +5,11 @@ import Footer from "./Footer"
 import migrateV5ToV6 from "../data/en/migrateV5ToV6"
 import typographyStyles from "../styles/typography.module.css"
 import containerStyles from "../styles/container.module.css"
+import useTranslation from "next-translate/useTranslation"
 
 const MigrateV5ToV6 = ({ defaultLang, content = migrateV5ToV6 }) => {
-  const {
-    state: { language },
-  } = useStateMachine()
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
 
   return (
     <div className={containerStyles.container}>

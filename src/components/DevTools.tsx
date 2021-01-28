@@ -17,6 +17,7 @@ import buttonStyles from "../styles/button.module.css"
 import codeAreaStyles from "./CodeArea.module.css"
 import getStartedStyle from "./GetStarted.module.css"
 import styles from "./DevTools.module.css"
+import useTranslation from "next-translate/useTranslation"
 
 interface Props {
   defaultLang: string
@@ -31,10 +32,8 @@ export default ({ defaultLang, content }: Props) => {
   const {
     state: { language, setting },
   } = useStateMachine()
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const lightMode = setting?.lightMode
 
   const { control } = methods

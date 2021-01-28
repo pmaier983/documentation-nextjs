@@ -11,20 +11,15 @@ import { Animate } from "react-simple-animate"
 import Search from "./Search"
 import styles from "./Nav.module.css"
 import colors from "../styles/colors"
+import useTranslation from "next-translate/useTranslation"
 
 export default function Nav({ defaultLang }: { defaultLang: string }) {
-  const {
-    action,
-    state,
-    state: { language, setting = {} },
-  } = useStateMachine(updateCurrentLanguage)
+  const { action, state } = useStateMachine(updateCurrentLanguage)
   const [showLang, setLang] = React.useState(null)
   const [showMenu, setShowMenu] = React.useState(false)
   const lightMode = state?.setting?.lightMode
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const location = globalHistory.location
 
   React.useEffect(() => {

@@ -19,6 +19,7 @@ import typographyStyles from "../styles/typography.module.css"
 import containerStyles from "../styles/container.module.css"
 import virtualizedList from "./codeExamples/virtualizedList"
 import virtualizedListFieldArray from "./codeExamples/virtualizedListFieldArray"
+import useTranslation from "next-translate/useTranslation"
 
 const { useRef } = React
 const enLinks = [
@@ -63,13 +64,8 @@ function Advanced({ defaultLang, advanced }: Props) {
     TransformandParse: null,
   })
 
-  const {
-    state: { language },
-  } = useStateMachine()
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
 
   const links = [
     advanced.accessibility,

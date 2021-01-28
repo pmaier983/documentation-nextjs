@@ -8,15 +8,11 @@ import data from "../data/resources"
 import typographyStyles from "../styles/typography.module.css"
 import containerStyle from "../styles/container.module.css"
 import styles from "./ResourcePage.module.css"
+import useTranslation from "next-translate/useTranslation"
 
 export default function ResourcePage({ defaultLang }: { defaultLang: string }) {
-  const {
-    state: { language },
-  } = useStateMachine()
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const animationBase = 0.05
 
   return (

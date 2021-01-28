@@ -18,6 +18,7 @@ import codeAreaStyles from "./CodeArea.module.css"
 import typographyStyles from "../styles/typography.module.css"
 import containerStyles from "../styles/container.module.css"
 import getStartedStyles from "./GetStarted.module.css"
+import useTranslation from "next-translate/useTranslation"
 
 const { useRef } = React
 
@@ -29,15 +30,10 @@ interface Props {
 }
 
 const Faq = ({ defaultLang, faq }: Props) => {
-  const {
-    state,
-    state: { language },
-  } = useStateMachine()
+  const { state } = useStateMachine()
   const lightMode = state?.setting?.lightMode
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
   const links = faq.questions
 
   const sectionsRef = useRef({

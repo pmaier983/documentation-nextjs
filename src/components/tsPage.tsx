@@ -7,6 +7,7 @@ import * as TS from "../data/ts"
 import handleSubmitCodeTs from "./codeExamples/handleSubmitCodeTs"
 import typographyStyles from "../styles/typography.module.css"
 import containerStyles from "../styles/container.module.css"
+import useTranslation from "next-translate/useTranslation"
 
 const enLinks = [
   TS.en.nestedValue,
@@ -30,9 +31,6 @@ const enLinks = [
 ]
 
 export default ({ defaultLang }: { defaultLang: string }) => {
-  const {
-    state: { language },
-  } = useStateMachine()
   const tsSectionsRef = React.useRef({
     NestedValueRef: null,
     ResolverRef: null,
@@ -53,10 +51,8 @@ export default ({ defaultLang }: { defaultLang: string }) => {
     ModeRef: null,
     FormStateProxyRef: null,
   })
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
+  const { lang } = useTranslation()
+  const currentLanguage = lang || "en"
 
   React.useEffect(() => {
     if (location.hash) {
