@@ -19,6 +19,7 @@ import containerStyles from "../styles/container.module.css"
 import typographyStyles from "../styles/typography.module.css"
 import styles from "./BuilderPage.module.css"
 import CodeArea from "./CodeArea"
+import useTranslation from "next-translate/useTranslation"
 
 const { useState, useRef, useEffect } = React
 
@@ -51,22 +52,17 @@ function BuilderPage({
   toggleBuilder,
   HomeRef,
   isStatic,
-  defaultLang,
 }: {
   showBuilder?: boolean
   toggleBuilder?: (state: boolean) => void
   HomeRef?: any
   isStatic?: boolean
-  defaultLang: string
 }) {
+  const { lang: currentLanguage } = useTranslation()
   const {
     state: { formData = [], language },
     action: updateFormData,
   } = useStateMachine(updateStore)
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
   const [editFormData, setFormData] = useState(defaultValue)
   const {
     register,

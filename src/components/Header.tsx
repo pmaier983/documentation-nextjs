@@ -10,6 +10,7 @@ import translateLink from "./logic/translateLink"
 import typographyStyles from "../styles/typography.module.css"
 import buttonStyles from "../styles/button.module.css"
 import styles from "./Header.module.css"
+import useTranslation from "next-translate/useTranslation"
 
 const LogoSvg = (
   <>
@@ -29,21 +30,11 @@ const LogoSvg = (
 
 export default function Header({
   homeRef,
-  defaultLang,
-}: // isCardPlay,
-{
+}: {
   homeRef: React.RefObject<HTMLDivElement>
-  defaultLang: string
-  // isCardPlay: boolean
 }) {
+  const { lang: currentLanguage } = useTranslation()
   const [isWeb, setIsWeb] = React.useState(true)
-  const {
-    state: { language },
-  } = useStateMachine()
-  const { currentLanguage } =
-    language && language.currentLanguage
-      ? language
-      : { currentLanguage: defaultLang }
 
   return (
     <>

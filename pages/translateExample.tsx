@@ -1,10 +1,10 @@
 import Link from "@/utils/Link"
 import useTranslation from "next-translate/useTranslation"
-import getTranslation from "@/jsxTranslations/homeTranslation"
+// import getTranslation from "@/jsxTranslations/homeTranslation"
 
 const Homepage = () => {
   const { t, lang } = useTranslation("common")
-  const translation = getTranslation(lang)
+  // const translation = getTranslation(lang)
   return (
     <>
       <main>

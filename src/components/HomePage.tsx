@@ -1,5 +1,6 @@
 import * as React from "react"
 import Form from "./Form"
+import _ from "lodash/fp"
 import Header from "./Header"
 import Watcher from "./Watcher"
 import CodeCompareSection from "./CodeCompareSection"
@@ -15,6 +16,7 @@ import containerStyles from "../styles/container.module.css"
 import buttonStyles from "../styles/button.module.css"
 import styles from "./HomePage.module.css"
 import useTranslation from "next-translate/useTranslation"
+import { useRouter } from "next/router"
 
 const { useState, useRef, useEffect } = React
 
@@ -23,17 +25,10 @@ const options = {
   threshold: [1],
 }
 
-function HomePage({
-  location,
-  defaultLang,
-}: {
-  location: {
-    search: string
-    pathname: string
-  }
-  defaultLang: string
-}) {
+function HomePage({}) {
   const { lang } = useTranslation()
+  const { query } = useRouter()
+  // const firstQuery: string = _.isArray(query) ? _.head(query) : query
   const currentLanguage = lang || "en"
   const [submitData, updateSubmitData] = useState({})
   const [showBuilder, toggleBuilder] = useState(false)
@@ -53,7 +48,7 @@ function HomePage({
   }
 
   useEffect(() => {
-    if (location.search.startsWith("?goToDemo")) {
+    if ("goToDemo" in query) {
       setTimeout(() => {
         HomeRef.current.scrollIntoView({ behavior: "smooth" })
 
@@ -113,18 +108,12 @@ function HomePage({
   return (
     <div className={styles.root}>
       {showBuilder && (
-        <Builder
-          showBuilder
-          toggleBuilder={toggleBuilder}
-          HomeRef={HomeRef}
-          defaultLang={defaultLang}
-        />
+        <Builder showBuilder toggleBuilder={toggleBuilder} HomeRef={HomeRef} />
       )}
 
       <Header
         // isCardPlay={isCardPlay}
         homeRef={HomeRef}
-        defaultLang={defaultLang}
       />
 
       <FeaturesList

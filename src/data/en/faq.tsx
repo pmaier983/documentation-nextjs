@@ -635,8 +635,11 @@ export default {
               </a>
             </li>
           </ul>
-          
-          <p>Alternatively you can use the _deprecated_ option <code>shouldUnregister: false</code> when calling `useForm`.</p>
+
+          <p>
+            Alternatively you can use the _deprecated_ option{" "}
+            <code>shouldUnregister: false</code> when calling `useForm`.
+          </p>
         </>
       ),
     },

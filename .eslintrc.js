@@ -41,6 +41,7 @@ module.exports = {
   rules: {
     // React
     "react/react-in-jsx-scope": OFF,
+    "react/no-unescaped-entities": WARN,
     "react/jsx-curly-newline": OFF,
     "react/jsx-one-expression-per-line": OFF,
     "react/jsx-props-no-spreading": OFF,
@@ -52,7 +53,6 @@ module.exports = {
     "@typescript-eslint/explicit-function-return-type": OFF,
     "@typescript-eslint/interface-name-prefix": OFF,
     "@typescript-eslint/semi": OFF,
-    "@typescript-eslint/no-unused-vars": ERROR,
     // Other
     "import/prefer-default-export": OFF,
     "space-infix-ops": OFF,

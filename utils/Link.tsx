@@ -35,12 +35,7 @@ const TranslatedLink: React.FC<LinkProps> = ({
   ...props
 }) => {
   const { lang } = useTranslation()
-  console.log("the classNames", className, activeClassName)
-  return (
-    <Link href={`${lang}${href}`} {...props}>
-      {children}
-    </Link>
-  )
+  return <div>Hello?</div>
 }
 
 export default TranslatedLink
