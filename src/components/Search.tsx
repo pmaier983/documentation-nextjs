@@ -8,16 +8,18 @@ const Search = () => {
   const { action, state } = useStateMachine(updateSetting)
 
   React.useEffect(() => {
-    const windowPH: any = window
-    windowPH.docsearch({
-      apiKey: "953c771d83fb6ffd55fe58da997f2d9d",
-      indexName: "react-hook-form",
-      inputSelector: "#algolia-doc-search",
-    })
+    const docSearchWindow: any = window
+    if (docSearchWindow.docsearch) {
+      docSearchWindow.docsearch({
+        apiKey: "953c771d83fb6ffd55fe58da997f2d9d",
+        indexName: "react-hook-form",
+        inputSelector: "#algolia-doc-search",
+      })
+    }
 
-    action({
-      isFocusOnSearch: false,
-    })
+    // action({
+    //   isFocusOnSearch: false,
+    // })
 
     return () => {
       clearTimeout(timer.current)

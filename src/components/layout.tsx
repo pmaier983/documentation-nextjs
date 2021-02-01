@@ -4,23 +4,14 @@ import { getEditLink } from "./logic/getEditLink"
 import { useStateMachine } from "little-state-machine"
 import Nav from "./Nav"
 import { updateSetting } from "../actions/settingActions"
-import "./layout.css"
+import useTranslation from "next-translate/useTranslation"
+import { useRouter } from "next/router"
 
-const Layout = (props: {
-  children: any
-  location?: {
-    search: string
-    pathname: string
-  }
-  defaultLang: string
-}) => {
-  const {
-    actions,
-    state,
-    state: { language },
-  } = useStateMachine({ updateSetting })
-  const { currentLanguage } =
-    language && language.currentLanguage ? language : { currentLanguage: "en" }
+const Layout: React.FC = ({ children }) => {
+  const { actions, state } = useStateMachine({ updateSetting })
+  const { lang } = useTranslation()
+  const { pathname } = useRouter()
+  const currentLanguage = lang || "en"
   const lightMode = state?.setting?.lightMode
   const [show, setShow] = React.useState(false)
   const scrollHandler = () => {
@@ -30,7 +21,7 @@ const Layout = (props: {
       setShow(false)
     }
   }
-  const editLink = getEditLink(currentLanguage, props.location?.pathname)
+  const editLink = getEditLink(currentLanguage, pathname)
 
   React.useEffect(() => {
     window.addEventListener("scroll", scrollHandler)
@@ -57,8 +48,8 @@ const Layout = (props: {
       <a className="skip-main" href="#main">
         Skip to content
       </a>
-      <Nav defaultLang={props.defaultLang} />
-      {props.children}
+      <Nav />
+      {children}
       <Animate
         play={show}
         start={{ opacity: 0, visibility: "hidden" }}

@@ -1,6 +1,6 @@
 import * as React from "react"
 import Link from "@/utils/Link"
-import GitHubButton from "react-github-btn"
+// import GitHubButton from "react-github-btn"
 import { useStateMachine } from "little-state-machine"
 import nav from "../data/nav"
 import translateLink from "./logic/translateLink"
@@ -13,8 +13,13 @@ import styles from "./Nav.module.css"
 import colors from "../styles/colors"
 import useTranslation from "next-translate/useTranslation"
 
-export default function Nav({ defaultLang }: { defaultLang: string }) {
-  const { action, state } = useStateMachine(updateCurrentLanguage)
+export default function Nav() {
+  const {
+    action,
+    // state: { setting },
+    state,
+  } = useStateMachine(updateCurrentLanguage)
+  console.log()
   const [showLang, setLang] = React.useState(null)
   const [showMenu, setShowMenu] = React.useState(false)
   const lightMode = state?.setting?.lightMode
@@ -22,13 +27,13 @@ export default function Nav({ defaultLang }: { defaultLang: string }) {
   const currentLanguage = lang || "en"
   const location = globalHistory.location
 
-  React.useEffect(() => {
-    if (setting.isFocusOnSearch) {
-      setLang(false)
-    } else if (!setting.isFocusOnSearch) {
-      setLang(true)
-    }
-  }, [setting.isFocusOnSearch])
+  // React.useEffect(() => {
+  //   if (setting.isFocusOnSearch) {
+  //     setLang(false)
+  //   } else if (!setting.isFocusOnSearch) {
+  //     setLang(true)
+  //   }
+  // }, [setting.isFocusOnSearch])
 
   return (
     <>
@@ -121,12 +126,12 @@ export default function Nav({ defaultLang }: { defaultLang: string }) {
           </a>
         </span>
 
-        <GitHubButton
+        {/* <GitHubButton
           href="https://github.com/bluebill1049/react-hook-form"
           data-size="large"
           data-show-count
           aria-label="Star react-hook-form on GitHub"
-        />
+        /> */}
       </div>
 
       {showMenu && (
